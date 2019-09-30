@@ -26,6 +26,9 @@ def create_checkout_session():
     data = json.loads(request.data)
     amount = str(data['amount']).replace('.', '')
     domain_url = os.getenv('DOMAIN')
+    print('here')
+    print(data)
+    print(amount)
 
     try:
         checkout_session = stripe.checkout.Session.create(
